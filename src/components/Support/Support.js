@@ -18,6 +18,7 @@ class Support extends Component {
 
     handleClick = () => {
         console.log('next button');
+        this.props.dispatch({type: 'UPDATE_STORE', payload: this.state})
         this.props.history.push('/Comments');
     }
 

@@ -17,9 +17,9 @@ const testReducer = (state = 'onready', action) => {
     return state
 }
 
-const feedbackReducer = (state = [], action) =>{
+const feedbackReducer = (state = {}, action) =>{
     if(action.type === 'UPDATE_STORE'){
-        return [...state,action.payload]
+        return {...state,...action.payload}
     }
     return state
 }

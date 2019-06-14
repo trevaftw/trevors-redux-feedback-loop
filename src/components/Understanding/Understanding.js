@@ -19,6 +19,7 @@ class Understanding extends Component {
 
     handleClick = () => {
         console.log('next button');
+        this.props.dispatch({type: 'UPDATE_STORE', payload: this.state})
         this.props.history.push('/Support');
     }
 
@@ -37,7 +38,7 @@ class Understanding extends Component {
                 <Review />
                 <br /><br />
                 {/* this is how i can target it */}
-                {JSON.stringify(this.props.reduxState.feedbackReducer, null, 2)}
+                {/* {JSON.stringify(this.props.reduxState.feedbackReducer.feeling, null, 2)} */}
                 {/* {this.props.reduxState.feedbackReducer.feeling} */}
             </>
         )
