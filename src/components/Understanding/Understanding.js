@@ -29,7 +29,7 @@ class Understanding extends Component {
                 <br />
                 <h1>How is your Understanding?</h1>
                 <br />
-                <input type="number" placeholder="0=dropout; 11=teacher" value={this.state.Understanding} onChange={this.handleChange} />
+                <input type="number" min="0" max="11" placeholder="0=dropout; 11=teacher" value={this.state.Understanding} onChange={this.handleChange} />
                 <br /><br />
                 {/* make a button component that takes you to the review page */}
                 <button onClick={this.handleClick}>Next</button>

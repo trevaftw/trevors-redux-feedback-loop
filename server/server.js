@@ -10,6 +10,9 @@ app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
 
+// app.get
+// app.post
+
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {

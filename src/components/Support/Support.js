@@ -28,7 +28,7 @@ class Support extends Component {
                 <br />
                 <h1>Do you feel Supported?</h1>
                 <br />
-                <input type="number" placeholder="0=alone; 11=family" value={this.state.Support} onChange={this.handleChange} />
+                <input type="number" min="0" max="11" placeholder="0=alone; 11=family" value={this.state.Support} onChange={this.handleChange} />
                 <br /><br />
                 {/* make a button component that takes you to the review page */}
                 <button onClick={this.handleClick}>Next</button>
