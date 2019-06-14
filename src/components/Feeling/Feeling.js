@@ -18,7 +18,8 @@ class Feeling extends Component {
     }
 
     handleClick = () => {
-        console.log('next button');
+        // console.log('next button');
+        this.props.dispatch({type: 'UPDATE_STORE', payload: this.state})
         this.props.history.push('/Understanding');
     }
 
@@ -41,4 +42,9 @@ class Feeling extends Component {
     }
 }
 
-export default connect()(Feeling);
+const mapReduxStateToProps = (ourEntireStore) => ({
+    reduxState: ourEntireStore
+})
+
+
+export default connect(mapReduxStateToProps)(Feeling);

@@ -35,9 +35,17 @@ class Understanding extends Component {
                 <button onClick={this.handleClick}>Next</button>
                 <br /><br />
                 <Review />
+                <br /><br />
+                {/* this is how i can target it */}
+                {JSON.stringify(this.props.reduxState.feedbackReducer, null, 2)}
+                {/* {this.props.reduxState.feedbackReducer.feeling} */}
             </>
         )
     }
 }
 
-export default connect()(Understanding);
+const mapReduxStateToProps = (ourEntireStore) => ({
+    reduxState: ourEntireStore
+})
+
+export default connect(mapReduxStateToProps)(Understanding);

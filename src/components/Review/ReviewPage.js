@@ -22,4 +22,8 @@ class ReviewPage extends Component {
     }
 }
 
-export default connect()(ReviewPage);
+const mapReduxStateToProps = (ourEntireStore) => ({
+    reduxState: ourEntireStore
+})
+
+export default connect(mapReduxStateToProps)(ReviewPage);
