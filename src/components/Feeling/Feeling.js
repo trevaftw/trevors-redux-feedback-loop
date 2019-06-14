@@ -17,7 +17,7 @@ class Feeling extends Component {
 
     handleClick = () => {
         console.log('next button');
-        this.props.history.push('/Review');
+        this.props.history.push('/Understanding');
     }
 
     render() {
@@ -25,7 +25,7 @@ class Feeling extends Component {
             <>
                 <h1>How are you feeling?</h1>
                 <br />
-                <input type="number" placeholder="0=dropout; 11=teacher" value={this.state.feeling} onChange={this.handleChange} />
+                <input type="number" placeholder="0=Drained; 11=Unstoppable" value={this.state.feeling} onChange={this.handleChange} />
                 <br /><br />
                 {/* make a button component that takes you to the review page */}
                 <button onClick={this.handleClick}>Next</button>
