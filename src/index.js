@@ -4,5 +4,26 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//use redux because we're creating a store
+import { applyMiddleware, createStore, combineReducers } from 'redux';
+//middleware so we can use logger
+import { Provider } from 'react-redux';
+import { logger } from 'redux-logger';
+
+const testReducer = (state = 'onready', action) => {
+    if (action.type === 'TEST_DISPATCH') {
+        return 'button was clicked'
+    }
+    return state
+}
+
+const storeInstance = createStore(
+    combineReducers({
+        testReducer,
+    }),
+    applyMiddleware(logger),
+)
+
+
+ReactDOM.render(<Provider store={storeInstance} ><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
