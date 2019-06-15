@@ -45,7 +45,9 @@ class Review extends Component {
                 Support: ~not real code~this.props.reduxstate.Support<br />
                 Comments: ~not real code~this.props.reduxstate.Comments<br /><br /> */}
 
-                {this.props.location.pathname === '/Feeling' || this.props.location.pathname === '/Understanding' || this.props.location.pathname === '/Support' ?
+                {this.props.location.pathname === '/Feeling' || 
+                this.props.location.pathname === '/Understanding' || 
+                this.props.location.pathname === '/Support' ?
                     <>
                         <button onClick={this.handleNotDone}>Incomplete</button>
                     </>

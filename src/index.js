@@ -10,12 +10,6 @@ import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { logger } from 'redux-logger';
 
-const testReducer = (state = 'onready', action) => {
-    if (action.type === 'TEST_DISPATCH') {
-        return 'button was clicked'
-    }
-    return state
-}
 
 const feedbackReducer = (state = {}, action) =>{
     if(action.type === 'UPDATE_STORE'){
@@ -31,7 +25,7 @@ const feedbackReducer = (state = {}, action) =>{
 
 const storeInstance = createStore(
     combineReducers({
-        testReducer, feedbackReducer
+        feedbackReducer
     }),
     applyMiddleware(logger),
 )

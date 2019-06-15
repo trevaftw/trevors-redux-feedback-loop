@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
 //to run dispatch need to connect to the store
 import { connect } from 'react-redux';
 // to define different pages, need to bring in router
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 //to setup a route, need to import component
 import Home from '../Home/Home';
 import Feeling from '../Feeling/Feeling';

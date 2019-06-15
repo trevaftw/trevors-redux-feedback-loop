@@ -8,10 +8,6 @@ import Review from '../Review/Review';
 
 class ReviewPage extends Component {
 
-    handleClick = () => {
-        this.props.history.push('/Five')
-    }
-
     render() {
         return (
             <>
