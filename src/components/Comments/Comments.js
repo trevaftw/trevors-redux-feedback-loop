@@ -30,7 +30,7 @@ class Comments extends Component {
                 <br />
                 <h1>What Comments do you have?</h1>
                 <br />
-                <textarea rows="4" cols="50" value={this.state.Comments} onChange={this.handleChange} placeholder="How did we do today?"></textarea>
+                <textarea rows="5" cols="50" value={this.state.Comments} onChange={this.handleChange} placeholder="How did we do today?"></textarea>
                 <br /><br />
                 {/* make a button component that takes you to the review page */}
                 <button onClick={this.handleClick}>Next</button>

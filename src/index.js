@@ -19,6 +19,8 @@ const testReducer = (state = 'onready', action) => {
 
 const feedbackReducer = (state = {}, action) =>{
     if(action.type === 'UPDATE_STORE'){
+        // return [...state, action.payload]
+        // i originally had above, but need to spread both and put them in one object
         return {...state,...action.payload}
     }
     return state
