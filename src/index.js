@@ -10,6 +10,11 @@ import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { logger } from 'redux-logger';
 
+//styling
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+
 
 const feedbackReducer = (state = {}, action) =>{
     if(action.type === 'UPDATE_STORE'){
