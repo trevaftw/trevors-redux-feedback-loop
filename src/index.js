@@ -22,6 +22,9 @@ const feedbackReducer = (state = {}, action) =>{
         // return [...state, action.payload]
         // i originally had above, but need to spread both and put them in one object
         return {...state,...action.payload}
+    }else if(action.type === 'SUBMISSION_COMPLETE'){
+        console.log('state', state)
+        return {};
     }
     return state
 }

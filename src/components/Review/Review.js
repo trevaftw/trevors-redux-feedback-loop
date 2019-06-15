@@ -3,11 +3,29 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //to link to first page, import link component
 // import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
+import axios from 'axios';
+
 
 class Review extends Component {
 
-    handleClick = () => {
-        console.log('click')
+    handleNotDone = () => {
+        alert('Please move to the next page and finish the feedback')
+    }
+
+    handleFinish = () => {
+        console.log('finished')
+        this.props.history.push('/Five')
+        this.props.dispatch({type: 'SUBMISSION_COMPLETE'})
+        const feedbackObject = this.props.reduxState.feedbackReducer;
+        axios({
+            method: 'POST',
+            url: '/database',
+            data: feedbackObject
+        }).then(response => {
+            console.log('response', response)
+        })
+
     }
 
     render() {
@@ -26,7 +44,20 @@ class Review extends Component {
                 Understanding: ~not real code~this.props.reduxstate.Understanding<br />
                 Support: ~not real code~this.props.reduxstate.Support<br />
                 Comments: ~not real code~this.props.reduxstate.Comments<br /><br /> */}
-                <button onClick={this.handleClick}>Incomplete/Submit. This will be a ternary based on which page this appears</button>
+
+                {this.props.location.pathname === '/Feeling' || this.props.location.pathname === '/Understanding' || this.props.location.pathname === '/Support' ?
+                    <>
+                        <button onClick={this.handleNotDone}>Incomplete</button>
+                    </>
+                    :
+                    <>
+                        <button onClick={this.handleFinish}>Submit</button>
+                    </>
+                }
+                <br /> <br />
+                {/* <button onClick={this.handleClick}>Incomplete</button> */}
+                {/* {JSON.stringify(this.props, null, 2)} */}
+                {/* <button onClick={this.handleDone}>Submit</button> */}
             </>
         )
     }
@@ -36,4 +67,4 @@ const mapReduxStateToProps = (ourEntireStore) => ({
     reduxState: ourEntireStore
 })
 
-export default connect(mapReduxStateToProps)(Review);
+export default withRouter(connect(mapReduxStateToProps)(Review));
