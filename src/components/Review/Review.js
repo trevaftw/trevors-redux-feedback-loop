@@ -6,27 +6,29 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import axios from 'axios';
 
-//Button styling
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+// //Button styling
+// import Button from '@material-ui/core/Button';
+// import { makeStyles } from '@material-ui/core/styles';
+// import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
-const useStyles = makeStyles(theme => ({
-    button: {
-        margin: theme.spacing(1),
-    },
-    leftIcon: {
-        marginRight: theme.spacing(1),
-    },
-    rightIcon: {
-        marginLeft: theme.spacing(1),
-    },
-    iconSmall: {
-        fontSize: 20,
-    },
-}));
 
-const classes = useStyles();
+//-----------figure out how to make work
+// const useStyles = makeStyles(theme => ({
+//     button: {
+//         margin: theme.spacing(1),
+//     },
+//     leftIcon: {
+//         marginRight: theme.spacing(1),
+//     },
+//     rightIcon: {
+//         marginLeft: theme.spacing(1),
+//     },
+//     iconSmall: {
+//         fontSize: 20,
+//     },
+// }));
+
+// const classes = useStyles();
 
 
 class Review extends Component {
@@ -62,11 +64,9 @@ class Review extends Component {
                     <li>Support: {this.props.reduxState.feedbackReducer.Support}</li>
                     <li>Comment: {this.props.reduxState.feedbackReducer.Comments}</li>
                 </ul>
-                {/* Feelings: ~not real code~this.props.reduxstate.Feelings<br />
-                Understanding: ~not real code~this.props.reduxstate.Understanding<br />
-                Support: ~not real code~this.props.reduxstate.Support<br />
-                Comments: ~not real code~this.props.reduxstate.Comments<br /><br /> */}
-
+                {/* the ternary below will change wil button is displayed and what functionality it has. if the page is the
+                feeling, support, or understanding it will display the incomplete button since you can't submit yet. on the other pages
+                (the comments page and the review page) you can submit it from those pages (since comments are optional). */}
                 {this.props.location.pathname === '/Feeling' ||
                     this.props.location.pathname === '/Understanding' ||
                     this.props.location.pathname === '/Support' ?
@@ -75,11 +75,11 @@ class Review extends Component {
                     </>
                     :
                     <>
-                        <Button variant="contained" color="default" className={classes.button} onClick={this.handleFinish}>
+                        {/* <Button variant="contained" color="default" className={classes.button} onClick={this.handleFinish}>
                             Submit
                             <CloudUploadIcon className={classes.rightIcon} />
-                        </Button>
-                        {/* <button >Submit</button> */}
+                        </Button> */}
+                        <button onClick={this.handleFinish} >Submit</button>
                     </>
                 }
                 <br /> <br />
@@ -95,4 +95,5 @@ const mapReduxStateToProps = (ourEntireStore) => ({
     reduxState: ourEntireStore
 })
 
+//had to use the withRouter to allow this.props.location because this componnent is inside a component 
 export default withRouter(connect(mapReduxStateToProps)(Review));

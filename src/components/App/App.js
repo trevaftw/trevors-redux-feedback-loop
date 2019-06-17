@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 // to define different pages, need to bring in router
 import { HashRouter as Router, Route } from 'react-router-dom';
 //to setup a route, need to import component
+
+//Need to import alll the different pages to use with the router
 import Home from '../Home/Home';
 import Feeling from '../Feeling/Feeling';
 import Understanding from '../Understanding/Understanding';
@@ -13,12 +15,7 @@ import Comments from '../Comments/Comments';
 import ReviewPage from '../Review/ReviewPage';
 import Five from '../Five/Five';
 
-
-
 class App extends Component {
-
-
-
   render() {
     return (
       <div className="App">

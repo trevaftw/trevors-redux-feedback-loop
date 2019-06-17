@@ -7,6 +7,7 @@ import Header from '../Header/Header';
 
 
 class Feeling extends Component {
+    //store the information in local state before dispatching to the store
     state = {
         feeling: ''
     };
@@ -19,7 +20,9 @@ class Feeling extends Component {
 
     handleClick = () => {
         // console.log('next button');
+        //send the local state to the store
         this.props.dispatch({type: 'UPDATE_STORE', payload: this.state})
+        //then go to the next page
         this.props.history.push('/Understanding');
     }
 
