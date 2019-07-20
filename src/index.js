@@ -7,6 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 //use redux because we're creating a store;middleware so we can use logger
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 //------What does provider do?
+//----captial letter means it is a component
 import { Provider } from 'react-redux';
 //logger to track state action changes
 import { logger } from 'redux-logger';

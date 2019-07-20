@@ -21,3 +21,6 @@ input {
   width: 200px;
 }
 
+li {
+  padding: 5px;
+}

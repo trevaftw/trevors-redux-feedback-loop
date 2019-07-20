@@ -15,7 +15,7 @@ class Header extends Component {
                     </>
                     :
                     <>
-                        <Link to="/">Want to start over?</Link>
+                        <br /><Link to="/">Want to start over?</Link>
                     </>
                 }
 

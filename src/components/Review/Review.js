@@ -55,37 +55,40 @@ class Review extends Component {
     render() {
         return (
             <>
-                <br />
-                Review Your Feeback:
+                <center>
+                    <br />
+                    Review Your Feeback:
                 <br /> <br />
-                <ul>
-                    <li>Feeling: {this.props.reduxState.feedbackReducer.feeling}</li>
-                    <li>Understanding: {this.props.reduxState.feedbackReducer.Understanding}</li>
-                    <li>Support: {this.props.reduxState.feedbackReducer.Support}</li>
-                    <li>Comment: {this.props.reduxState.feedbackReducer.Comments}</li>
-                </ul>
-                {/* the ternary below will change wil button is displayed and what functionality it has. if the page is the
+                    <ul><center>
+                        <li>Feeling: {this.props.reduxState.feedbackReducer.feeling}</li>
+                        <li>Understanding: {this.props.reduxState.feedbackReducer.Understanding}</li>
+                        <li>Support: {this.props.reduxState.feedbackReducer.Support}</li>
+                        <li>Comment: {this.props.reduxState.feedbackReducer.Comments}</li>
+                        </center>
+                    </ul>
+                    {/* the ternary below will change wil button is displayed and what functionality it has. if the page is the
                 feeling, support, or understanding it will display the incomplete button since you can't submit yet. on the other pages
                 (the comments page and the review page) you can submit it from those pages (since comments are optional). */}
-                {this.props.location.pathname === '/Feeling' ||
-                    this.props.location.pathname === '/Understanding' ||
-                    this.props.location.pathname === '/Support' ?
-                    <>
-                        <button onClick={this.handleNotDone}>Incomplete</button>
-                    </>
-                    :
-                    <>
-                        {/* <Button variant="contained" color="default" className={classes.button} onClick={this.handleFinish}>
+                    {this.props.location.pathname === '/Feeling' ||
+                        this.props.location.pathname === '/Understanding' ||
+                        this.props.location.pathname === '/Support' ?
+                        <>
+                            <button onClick={this.handleNotDone}>Incomplete</button>
+                        </>
+                        :
+                        <>
+                            {/* <Button variant="contained" color="default" className={classes.button} onClick={this.handleFinish}>
                             Submit
                             <CloudUploadIcon className={classes.rightIcon} />
                         </Button> */}
-                        <button onClick={this.handleFinish} >Submit</button>
-                    </>
-                }
-                <br /> <br />
-                {/* <button onClick={this.handleClick}>Incomplete</button> */}
-                {/* {JSON.stringify(this.props, null, 2)} */}
-                {/* <button onClick={this.handleDone}>Submit</button> */}
+                            <button onClick={this.handleFinish} >Submit</button>
+                        </>
+                    }
+                    <br /> <br />
+                    {/* <button onClick={this.handleClick}>Incomplete</button> */}
+                    {/* {JSON.stringify(this.props, null, 2)} */}
+                    {/* <button onClick={this.handleDone}>Submit</button> */}
+                </center>
             </>
         )
     }
